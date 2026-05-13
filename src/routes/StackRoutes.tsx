@@ -2,7 +2,13 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Home from "../screens/Home";
 import Product from "../screens/Product";
 
-const Stack = createNativeStackNavigator() // Cria uma instância para simplificação.
+
+export type StackRouterParamList = { // Define o tipo de parâmetros para cada rota.
+  home: undefined; // A rota "home" e a rota "product" não espera nenhum parâmetro.
+  product: undefined;
+}
+
+const Stack = createNativeStackNavigator<StackRouterParamList>(); // Cria uma instância para simplificação.
 
 export function StackRoutes() {
   return (
