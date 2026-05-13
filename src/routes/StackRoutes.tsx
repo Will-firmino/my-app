@@ -11,10 +11,12 @@ export type StackRouterParamList = { // Define o tipo de parâmetros para cada r
 const Stack = createNativeStackNavigator<StackRouterParamList>(); // Cria uma instância para simplificação.
 
 export function StackRoutes() {
-  return (
-    <Stack.Navigator> {/**  Utiliza para criar a navegação */}
-      <Stack.Screen name="product" component={Product}/>
-      <Stack.Screen name="home" component={Home}/>
+  return (  
+    
+    <Stack.Navigator initialRouteName="home" screenOptions={{headerShown: true}}> 
+      <Stack.Screen name="home" component={Home} options={{headerShown: false}}/>
+      <Stack.Screen name="product" component={Product} options={{headerTitle: "Produtos"}}/>
     </Stack.Navigator>
+    
   )
 }
